@@ -3,11 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Hello World with HTML,JS and React</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="root">
       <h1>Hello World!</h1>
     </div>
+    <script>
+      const divEl = document.getElementById("root");
+      const h1El = document.createElement("h1");
+      h1El.innerHTML = "Hello World from JS!";
+      divEl.appendChild(h1El);
+    </script>
   </body>
 </html>
