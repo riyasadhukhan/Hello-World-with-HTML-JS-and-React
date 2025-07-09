@@ -1,0 +1,32 @@
+{
+  "name": "hello_world_with_html_js_and_react",
+  "version": "1.0.0",
+  "description": "hello world ",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riyasadhukhan/Hello-World-with-HTML-JS-and-React.git"
+  },
+  "author": "Riya Sadhukhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/riyasadhukhan/Hello-World-with-HTML-JS-and-React/issues"
+  },
+  "homepage": "https://github.com/riyasadhukhan/Hello-World-with-HTML-JS-and-React#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ]
+}
