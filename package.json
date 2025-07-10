@@ -19,7 +19,8 @@
   "homepage": "https://github.com/riyasadhukhan/Hello-World-with-HTML-JS-and-React#readme",
   "dependencies": {
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
     "parcel": "^2.15.4"

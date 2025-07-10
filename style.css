@@ -1,3 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #root h1 {
   color: crimson;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d2d2d2;
+  padding: 10px 100px;
+  border-bottom: 2px solid #beb5b5;
+}
+input {
+  padding: 10px 40px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+}
+.inputGroup {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+img {
+  width: 90px;
+  height: 80px;
+  border-radius: 100%;
 }
