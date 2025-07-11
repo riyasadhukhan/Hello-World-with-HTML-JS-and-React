@@ -41,6 +41,10 @@ img {
   color: rgb(53, 51, 51);
 }
 .header-container {
+  width: 100%;
+  position: fixed;
+  top: 20px;
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -72,8 +76,12 @@ img {
   border-radius: 35px;
   border: 1.3px solid black;
   cursor: pointer;
+  white-space: nowrap;
 }
 .top-container {
+  width: 100%;
+  position: fixed;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -107,6 +115,7 @@ img {
   align-items: center;
   padding: 50px 450px;
   gap: 30px;
+  padding-top: 150px;
 }
 .menu-text-container {
   display: flex;
