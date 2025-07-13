@@ -60,3 +60,69 @@ Coding Assignment: 4
 operator
 ○ Render your cards with dynamic data of restaurants
 ○ Use Array.map to render all the restaurants
+
+Coding Assignment: 5
+
+● Clean up your code
+● Create a Folder Structure for your app
+● Make different files for each Components
+● Create a config file
+● Use all types of import and export
+● Create a Search Box in your App
+● Use useState to create a variable and bind it to the input box
+● Try to make your search bar work
+
+// const innerDiv = React.createElement("div", { id: "reactChild" }, [
+// React.createElement("h1", {}, "Hello World from React1!"),
+// React.createElement("h2", {}, "Hello World from React2!"),
+// ]);
+
+// //JSX element
+// const headerElement = (
+// <div className="title">
+// <h1>H1 Heading</h1>
+// <h2>H2 Heading</h2>
+// <h3>H3 Heading</h3>
+// </div>
+// );
+
+// const ChildHeaderComponent = () => {
+// return <p>I am from child component.</p>;
+// };
+
+// //Functional Component
+// const HeaderComponent = () => {
+// return (
+// <div className="title">
+// <ChildHeaderComponent />
+// <h1>H1 Heading form component</h1>
+// <h2>H2 Heading form component</h2>
+// <h3>H3 Heading form component</h3>
+// </div>
+// );
+// };
+
+// const HeaderComponent = () => {
+// return (
+// <div className="header">
+// <img
+// src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/creative-logo-or-icon-design-template-d6cdd0b35fc4b69ddc3288a7abd52ff3_screen.jpg?ts=1578260767"
+// alt="Logo"
+// />
+// <div className="inputGroup">
+// <FaSearch
+// style={{
+//             position: "absolute",
+//             top: "30%",
+//             left: "5%",
+//             color: "#5b5956",
+//           }}
+// />
+// <input type="text" placeholder="Search here..." />
+// <FaUserCircle
+// style={{ width: "40px", height: "40px", color: "#5f6363" }}
+// />
+// </div>
+// </div>
+// );
+// };
