@@ -44,6 +44,7 @@ img {
   width: 100%;
   position: fixed;
   top: 20px;
+  z-index: 5;
   background-color: white;
   display: flex;
   justify-content: space-evenly;
@@ -80,7 +81,7 @@ img {
 .top-container {
   width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 6;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -168,6 +169,10 @@ img {
   padding: 5px;
   margin: 10px;
   border-radius: 5px;
+}
+.card-container:hover {
+  border: 2px solid #c4b9b9;
+  cursor: pointer;
 }
 .food-description {
   padding: 30px;

@@ -1,12 +1,16 @@
 const FoodCard = ({ item }) => {
-  const { image_url, price, meal_name, tags } = item;
+  const { cloudinaryImageId, costForTwo, name, cuisines } = item.info;
   return (
     <div className="card-container">
-      <img alt="food img" className="foodimg" src={image_url} />
+      <img
+        alt="food img"
+        className="foodimg"
+        src={`https://media-assets.swiggy.com/swiggy/image/upload/${cloudinaryImageId}`}
+      />
       <div className="food-description">
-        <h3 className="price">$ {price}</h3>
-        <h2 className="item-name">{meal_name}</h2>
-        <p className="cuisine">{tags.join(" | ")}</p>
+        <h3 className="price">{costForTwo}</h3>
+        <h2 className="item-name">{name}</h2>
+        <p className="cuisine">{cuisines.join(" | ")}</p>
       </div>
     </div>
   );

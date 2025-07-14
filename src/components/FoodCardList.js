@@ -1,15 +1,29 @@
 import FoodCard from "./FoodCard";
-import { data } from "../utils/mockData";
 import SearchItem from "./SearchItem";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { SWIGGY_URL } from "../utils/constants";
 
 const FoodCardList = () => {
   const [searchItem, setSearchItem] = useState("");
+  const [foodData, setFoodData] = useState([]);
 
-  const filteredItems = data.filter((dataItem) =>
-    dataItem.meal_name.toLowerCase().startsWith(searchItem.toLowerCase())
+  const fetchSwiggyData = async () => {
+    const response = await fetch(SWIGGY_URL);
+    const jsonData = await response.json();
+    const cards = jsonData?.data?.cards[4] || [];
+    const restaurants =
+      cards?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    setFoodData(restaurants);
+  };
+
+  useEffect(() => {
+    fetchSwiggyData();
+  }, []);
+
+  const filteredItems = foodData.filter((dataItem) =>
+    dataItem.info.name.toLowerCase().startsWith(searchItem.toLowerCase())
   );
-  const itemsToRender = searchItem ? filteredItems : data;
+  const itemsToRender = searchItem ? filteredItems : foodData;
 
   return (
     <>
@@ -23,7 +37,7 @@ const FoodCardList = () => {
       {
         <div className="card-list-container">
           {itemsToRender.map((item) => (
-            <FoodCard key={item.id} item={item} />
+            <FoodCard key={item.info.id} item={item} />
           ))}
         </div>
       }

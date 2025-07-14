@@ -1,5 +1,4 @@
 import { FaTwitter, FaFacebook, FaInstagram, FaGithub } from "react-icons/fa";
-import { data } from "../utils/mockData";
 
 const Footer = () => {
   return (
@@ -94,17 +93,17 @@ const Footer = () => {
           <p style={{ color: "white", fontSize: "16px", textAlign: "center" }}>
             Follow Us On Instagram
           </p>
-          <ul>
+          {/* <ul>
             {data
               .filter((item) => item.rating > 4.6)
               .map((item) => (
                 <img
                   className="col4-list-img"
-                  key={item.id}
+                  key={item.info.id}
                   src={item.image_url}
                 />
               ))}
-          </ul>
+          </ul> */}
         </div>
       </div>
       <p
