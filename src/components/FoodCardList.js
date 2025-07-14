@@ -2,6 +2,7 @@ import FoodCard from "./FoodCard";
 import SearchItem from "./SearchItem";
 import { useEffect, useState } from "react";
 import { SWIGGY_URL } from "../utils/constants";
+import ShimmerUI from "./ShimmerUI";
 
 const FoodCardList = () => {
   const [searchItem, setSearchItem] = useState("");
@@ -23,6 +24,7 @@ const FoodCardList = () => {
   const filteredItems = foodData.filter((dataItem) =>
     dataItem.info.name.toLowerCase().startsWith(searchItem.toLowerCase())
   );
+
   const itemsToRender = searchItem ? filteredItems : foodData;
 
   return (
@@ -34,13 +36,19 @@ const FoodCardList = () => {
         placeholder="Search here..."
         onChange={setSearchItem}
       />
-      {
+      {foodData.length === 0 ? (
+        <div className="card-list-container">
+          {Array.from({ length: 8 }).map((_, index) => (
+            <ShimmerUI key={index} />
+          ))}
+        </div>
+      ) : (
         <div className="card-list-container">
           {itemsToRender.map((item) => (
             <FoodCard key={item.info.id} item={item} />
           ))}
         </div>
-      }
+      )}
     </>
   );
 };

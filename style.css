@@ -300,3 +300,45 @@ img {
   top: 16px;
   cursor: pointer;
 }
+.shimmer-card-container {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #c4b9b9;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 5px;
+}
+.shimmer-food-description {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.shimmer-price {
+  width: 90px;
+  height: 20px;
+  background-color: #dfdada;
+  border-radius: 20px;
+}
+.shimmer-item-name {
+  width: 200px;
+  height: 20px;
+  background-color: #dfdada;
+  border-radius: 20px;
+}
+.shimmer-cuisine {
+  width: 230px;
+  height: 20px;
+  background-color: #dfdada;
+  border-radius: 20px;
+}
+.shimmer-foodimg {
+  width: 100%;
+  height: 150px;
+  background-color: #dfdada;
+  border-radius: 10px;
+}
