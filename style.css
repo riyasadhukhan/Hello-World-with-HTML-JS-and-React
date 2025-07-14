@@ -271,3 +271,27 @@ img {
   justify-content: center;
   gap: 20px;
 }
+.search-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 0px;
+  margin: 0px 100px;
+  border-bottom: 2px solid #ebe5e5;
+}
+.searchBar {
+  border: none;
+  outline: none;
+  padding: 10px 30px;
+  border-radius: 35px;
+  background-color: #ddd7d7;
+}
+.close-btn {
+  font-size: 20px;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 10px;
+  top: 16px;
+  cursor: pointer;
+}
