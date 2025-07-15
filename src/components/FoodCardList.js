@@ -9,12 +9,16 @@ const FoodCardList = () => {
   const [foodData, setFoodData] = useState([]);
 
   const fetchSwiggyData = async () => {
-    const response = await fetch(SWIGGY_URL);
-    const jsonData = await response.json();
-    const cards = jsonData?.data?.cards[4] || [];
-    const restaurants =
-      cards?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-    setFoodData(restaurants);
+    try {
+      const response = await fetch(SWIGGY_URL);
+      const jsonData = await response.json();
+      const cards = jsonData?.data?.cards[4] || [];
+      const restaurants =
+        cards?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+      setFoodData(restaurants);
+    } catch (error) {
+      console.error("Failed to fetch swiggy data: ", error.message);
+    }
   };
 
   useEffect(() => {
