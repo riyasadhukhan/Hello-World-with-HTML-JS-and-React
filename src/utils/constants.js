@@ -1,2 +1,2 @@
 export const SWIGGY_URL =
-  "https://raw.githubusercontent.com/namastedev/namaste-react/refs/heads/main/swiggy-api";
+  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.5769763&lng=88.3673359&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
