@@ -84,6 +84,16 @@ Coding Assignment : 6
 ● Make Search functionality work
 ● Make a Login Logout button which toggles with a state
 
+Coding Assignment: 7
+
+● Add Shimmer Effect without installing a library
+● Install react-router-dom
+● Create a appRouter and Provide it to the app
+● Create a Home, About, Contact Page with Link (use child routes)
+● Make a Error page for routing errors
+● Create a Restaurant Page with dynamic restaurant ID
+● (Extra) - Create a login Page using Formik Library
+
 // const innerDiv = React.createElement("div", { id: "reactChild" }, [
 // React.createElement("h1", {}, "Hello World from React1!"),
 // React.createElement("h2", {}, "Hello World from React2!"),

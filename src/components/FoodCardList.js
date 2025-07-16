@@ -3,6 +3,7 @@ import SearchItem from "./SearchItem";
 import { useEffect, useState } from "react";
 import { SWIGGY_URL } from "../utils/constants";
 import ShimmerUI from "./ShimmerUI";
+import Restaurants from "./Restaurants";
 
 const FoodCardList = () => {
   const [searchItem, setSearchItem] = useState("");
@@ -33,6 +34,7 @@ const FoodCardList = () => {
 
   return (
     <>
+      <Restaurants />
       <SearchItem
         searchItem={searchItem}
         setSearchItem={setSearchItem}

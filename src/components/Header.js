@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import TopHeader from "./TopHeader";
 
 const Header = () => {
@@ -17,13 +18,17 @@ const Header = () => {
           <ul className="nav-list">
             <li className="nav-item">Home</li>
             <li className="nav-item">About</li>
-            <li className="nav-item">Menu</li>
-            <li className="nav-item">Pages</li>
+            <Link to="/" className="link-item">
+              <li className="nav-item">Restaurants</li>
+            </Link>
+            <Link to="/menu" className="link-item">
+              <li className="nav-item">Menu</li>
+            </Link>
             <li className="nav-item">Contact</li>
           </ul>
         </div>
         <div className="btn-container">
-          <button className="btn">Book A Table</button>
+          <button className="btn">Add To Cart</button>
         </div>
       </div>
     </>

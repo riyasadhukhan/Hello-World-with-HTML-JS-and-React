@@ -1,8 +1,10 @@
 import { FaTwitter, FaFacebook, FaInstagram, FaGithub } from "react-icons/fa";
+import DeliveryPartner from "./DeliveryPartner";
 
 const Footer = () => {
   return (
     <>
+      <DeliveryPartner />
       <div className="footer-container">
         <div className="footer-col1">
           <div className="logo-container">
