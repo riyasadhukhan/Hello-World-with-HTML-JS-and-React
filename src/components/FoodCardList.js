@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { SWIGGY_URL } from "../utils/constants";
 import ShimmerUI from "./ShimmerUI";
 import Restaurants from "./Restaurants";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 const FoodCardList = () => {
   const [searchItem, setSearchItem] = useState("");

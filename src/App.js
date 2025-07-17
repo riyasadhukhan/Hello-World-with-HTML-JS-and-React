@@ -3,12 +3,14 @@ import Header from "./components/Header";
 import Menu from "./components/Menu";
 import Footer from "./components/Footer";
 import ErrorPage from "./components/ErrorPage";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import FoodCardList from "./components/FoodCardList";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   return (
     <>
+      <ScrollToTop />
       <Header />
       <Outlet />
       <Footer />
