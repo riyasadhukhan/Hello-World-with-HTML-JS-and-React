@@ -349,3 +349,43 @@ img {
   text-decoration: none;
   color: #333131;
 }
+.menu-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+.menu-list-container {
+  padding: 10px 100px;
+}
+.menu-list-child-container {
+  display: flex;
+  padding: 20px;
+  border-bottom: 1px solid lightgrey;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-name,
+.menu-price {
+  font-weight: 700;
+  font-size: 20px;
+  color: #251f1f;
+}
+.menu-rating {
+  padding: 0px 20px;
+  font-size: 18px;
+  color: #28b073;
+}
+.menu-desc {
+  font-size: 14px;
+  color: grey;
+  max-width: 500px;
+}
+.description-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.link {
+  text-decoration: none;
+  color: #333131;
+}

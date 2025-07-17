@@ -30,6 +30,10 @@ const router = createBrowserRouter([
         path: "/menu",
         element: <Menu />,
       },
+      {
+        path: "restaurants/:resId",
+        element: <Menu />,
+      },
     ],
   },
 ]);

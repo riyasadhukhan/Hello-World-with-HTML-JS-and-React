@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { SWIGGY_URL } from "../utils/constants";
 import ShimmerUI from "./ShimmerUI";
 import Restaurants from "./Restaurants";
+import { Link } from "react-router";
 
 const FoodCardList = () => {
   const [searchItem, setSearchItem] = useState("");
@@ -48,7 +49,13 @@ const FoodCardList = () => {
               <ShimmerUI key={index} />
             ))
           : itemsToRender.map((item) => (
-              <FoodCard key={item.info.id} item={item} />
+              <Link
+                className="link"
+                to={`/restaurants/${item.info.id}`}
+                key={item.info.id}
+              >
+                <FoodCard item={item} />
+              </Link>
             ))}
       </div>
     </>
