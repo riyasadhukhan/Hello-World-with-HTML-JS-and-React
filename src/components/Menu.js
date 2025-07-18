@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import ShimmerMenu from "./ShimmerMenu";
 
 const Menu = () => {
   const [menu, setMenu] = useState([]);
@@ -41,38 +42,42 @@ const Menu = () => {
         </div>
       </div>
       <div className="menu-list-container">
-        {menu.map((item) => {
-          const { id, name, defaultPrice, price, description, imageId } =
-            item?.card?.info;
-          const { ratings } = item?.card?.info;
-          const rating = ratings?.aggregatedRating?.rating;
-          const ratingCount = ratings?.aggregatedRating?.ratingCountV2;
+        {menu.length === 0
+          ? Array.from({ length: 8 }).map((_, index) => (
+              <ShimmerMenu key={index} />
+            ))
+          : menu.map((item) => {
+              const { id, name, defaultPrice, price, description, imageId } =
+                item?.card?.info;
+              const { ratings } = item?.card?.info;
+              const rating = ratings?.aggregatedRating?.rating;
+              const ratingCount = ratings?.aggregatedRating?.ratingCountV2;
 
-          return (
-            <div className="menu-list-child-container" key={id}>
-              <div className="description-menu-list">
-                <p className="menu-name">{name}</p>
-                <p className="menu-price">
-                  Rs.{price ? price / 100 : defaultPrice / 100}
-                  <span className="menu-rating">
-                    {rating && ratingCount
-                      ? ` ★ ${rating} (${ratingCount})`
-                      : " "}
-                  </span>
-                </p>
+              return (
+                <div className="menu-list-child-container" key={id}>
+                  <div className="description-menu-list">
+                    <p className="menu-name">{name}</p>
+                    <p className="menu-price">
+                      Rs.{price ? price / 100 : defaultPrice / 100}
+                      <span className="menu-rating">
+                        {rating && ratingCount
+                          ? ` ★ ${rating} (${ratingCount})`
+                          : " "}
+                      </span>
+                    </p>
 
-                <p className="menu-desc">{description}</p>
-              </div>
-              <div className="menu-list-img">
-                <img
-                  className="menu-img"
-                  alt="menu-img"
-                  src={`https://media-assets.swiggy.com/swiggy/image/upload/${imageId}`}
-                />
-              </div>
-            </div>
-          );
-        })}
+                    <p className="menu-desc">{description}</p>
+                  </div>
+                  <div className="menu-list-img">
+                    <img
+                      className="menu-img"
+                      alt="menu-img"
+                      src={`https://media-assets.swiggy.com/swiggy/image/upload/${imageId}`}
+                    />
+                  </div>
+                </div>
+              );
+            })}
       </div>
     </>
   );

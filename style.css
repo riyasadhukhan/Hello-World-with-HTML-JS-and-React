@@ -158,10 +158,11 @@ img {
   height: 150px;
 }
 .card-list-container {
-  flex-wrap: wrap;
+  /* flex-wrap: wrap;
   display: flex;
   justify-content: center;
-  margin: 30px;
+  margin: 30px; */
+  margin: 0 auto;
 }
 .card-container {
   width: 250px;
@@ -388,4 +389,44 @@ img {
 .link {
   text-decoration: none;
   color: #333131;
+}
+.shimmer-menu-name {
+  height: 20px;
+  width: 250px;
+  background-color: #f0ecec;
+  border-radius: 5px;
+}
+.shimmer-menu-price {
+  height: 20px;
+  width: 100px;
+  background-color: #f0ecec;
+  border-radius: 5px;
+}
+.shimmer-menu-list-img {
+  height: 100px;
+  width: 100px;
+  background-color: #f0ecec;
+  border-radius: 5px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  overflow: hidden; /* Prevent scrollbars */
+}
+
+.grid-item {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Edge */
 }
