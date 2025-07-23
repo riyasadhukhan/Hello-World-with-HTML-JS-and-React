@@ -1,5 +1,3 @@
-import React from "react";
-
 const FoodCard = ({ item }) => {
   const { cloudinaryImageId, costForTwo, name, cuisines } = item.info;
   return (
@@ -19,11 +17,4 @@ const FoodCard = ({ item }) => {
   );
 };
 
-const areEqual = (prevProps, nextProps) => {
-  return (
-    prevProps.item.info.id === nextProps.item.info.id &&
-    JSON.stringify(prevProps.item.info) === JSON.stringify(nextProps.item.info)
-  );
-};
-
-export default React.memo(FoodCard, areEqual);
+export default FoodCard;
