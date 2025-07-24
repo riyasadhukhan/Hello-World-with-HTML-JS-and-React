@@ -17,6 +17,7 @@ const FoodCardList = () => {
   const seenOffsets = useRef(new Set());
   const retryCount = useRef(0);
   const maxRetries = 3;
+  const widgetOffsetCounter = useRef(9); // Start with 9, Swiggy default
 
   const fetchSwiggyData = useCallback(async () => {
     if (loading || !hasMore || searchItem) return;
@@ -30,8 +31,24 @@ const FoodCardList = () => {
     try {
       const lat = 22.5726;
       const lng = 88.3639;
+
+      const widgetOffset = {
+        collectionV5RestaurantListWidget_SimRestoRelevance_food_seo: String(
+          widgetOffsetCounter.current
+        ),
+      };
+
+      const queryParams = new URLSearchParams({
+        lat,
+        lng,
+        offset: nextOffset,
+        sortBy: "RELEVANCE",
+        page_type: "DESKTOP_WEB_LISTING",
+        widgetOffset: JSON.stringify(widgetOffset),
+      });
+
       const response = await fetch(
-        `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${lat}&lng=${lng}&offset=${nextOffset}&sortBy=RELEVANCE&page_type=DESKTOP_WEB_LISTING`,
+        `https://www.swiggy.com/dapi/restaurants/list/v5?${queryParams.toString()}`,
         {
           signal: controller.signal,
           headers: {
@@ -55,25 +72,25 @@ const FoodCardList = () => {
         restaurantCard?.card?.card?.gridElements?.infoWithStyle?.restaurants ||
         [];
 
-      const newOffset = jsonData?.data?.pageOffset?.nextOffset || null;
+      const newNextOffset = jsonData?.data?.pageOffset?.nextOffset;
 
-      console.log("API Response:", {
+      console.log("API Response Debug: ", {
+        newNextOffset,
         restaurantsCount: restaurants.length,
-        nextOffset: newOffset,
         totalRestaurants: foodData.length + restaurants.length,
+        widgetOffsetUsed: widgetOffsetCounter.current,
       });
 
-      if (!newOffset || seenOffsets.current.has(newOffset)) {
-        console.log("Duplicate or null offset. Stopping further fetches.");
+      if (!newNextOffset || seenOffsets.current.has(newNextOffset)) {
+        console.log("No new offset. Stopping fetch.");
         setHasMore(false);
         return;
       }
 
-      seenOffsets.current.add(newOffset);
-
-      // No filtering for duplicates — allow Swiggy to handle it
+      seenOffsets.current.add(newNextOffset);
       setFoodData((prev) => [...prev, ...restaurants]);
-      setNextOffset(newOffset);
+      setNextOffset(newNextOffset);
+      widgetOffsetCounter.current += 15; // Increment by 15 on each scroll
       retryCount.current = 0;
     } catch (error) {
       if (error.name === "AbortError") {
@@ -94,7 +111,7 @@ const FoodCardList = () => {
     } finally {
       setLoading(false);
     }
-  }, [loading, hasMore, nextOffset, foodData, searchItem]);
+  }, [loading, hasMore, nextOffset, searchItem, foodData]);
 
   useEffect(() => {
     fetchSwiggyData();
@@ -123,10 +140,7 @@ const FoodCardList = () => {
         }
       );
 
-      if (node) {
-        console.log("Observing last card:", node);
-        observer.current.observe(node);
-      }
+      if (node) observer.current.observe(node);
     },
     [loading, hasMore, fetchSwiggyData, searchItem]
   );

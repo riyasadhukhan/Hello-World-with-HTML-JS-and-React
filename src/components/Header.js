@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import TopHeader from "./TopHeader";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
+  const online = useOnlineStatus();
+
   return (
     <>
       <TopHeader />
@@ -24,7 +27,7 @@ const Header = () => {
             <Link to="/menu" className="link-item">
               <li className="nav-item">Menu</li>
             </Link>
-            <li className="nav-item">Contact</li>
+            <li className="nav-item">Active:{online ? "🟢" : "🔴"}</li>
           </ul>
         </div>
         <div className="btn-container">
